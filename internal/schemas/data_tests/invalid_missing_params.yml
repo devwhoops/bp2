@@ -1,0 +1,5 @@
+steps:
+  - bp2:
+      parameters:
+        foo: bar
+        bar: foo

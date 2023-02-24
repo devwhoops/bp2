@@ -1,0 +1,10 @@
+bp2:
+  source: git://<>.git
+  parameters:
+    foo: bar
+---
+steps:
+  - bp2:
+    source: git://<>.git
+    parameters:
+      foo: bar

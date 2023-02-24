@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "steps": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "bp2": {
+              "type": "object",
+              "properties": {
+                "source": {
+                  "type": "string"
+                },
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  },
+                  "required": []
+                }
+              },
+              "required": [
+                "source"
+              ]
+            }
+          },
+          "required": [
+            "bp2"
+          ]
+        }
+      }
+    },
+    "required": [
+      "steps"
+    ]
+  }
+  

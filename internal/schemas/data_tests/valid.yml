@@ -1,0 +1,6 @@
+steps:
+  - bp2:
+      source: git@github.com:qri-io/jsonschema.git
+      parameters:
+        foo: bar
+        bar: foo
