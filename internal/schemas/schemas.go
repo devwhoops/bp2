@@ -1,23 +1,27 @@
 package schemas
 
 import (
-	"fmt"
-
 	"github.com/goccy/go-yaml"
 )
 
+type Schema struct {
+	Steps []struct {
+		Bp2 struct {
+			Source     string `yaml:"source"`
+			Parameters struct {
+				Foo string `yaml:"foo"`
+				Bar string `yaml:"bar"`
+			} `yaml:"parameters"`
+		} `yaml:"bp2"`
+	} `yaml:"steps"`
+}
+
 func Validator(data []byte) (bool, error) {
-	yml := []byte("foo: 1\nbar: carloslindao")
+	var schema Schema
 
-	var schema struct {
-		Foo int    `yaml:"foo"`
-		Bar string `yaml:"bar"`
-	}
-
-	if err := yaml.Unmarshal(yml, &schema); err != nil {
+	if err := yaml.Unmarshal(data, &schema); err != nil {
 		return false, err
 	}
-	fmt.Println(schema.Bar, "hello")
 	return true, nil
 }
 
